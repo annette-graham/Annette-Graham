@@ -1,0 +1,8 @@
+{
+  "links": [
+    {"id": "1", "name": "About Me |", "url": "#/about"},
+    {"id": "2", "name": "Projects  |", "url": "#/projects"},
+    {"id": "3", "name": "Technology |", "url": "#/tech"},
+    {"id": "4", "name": "Contact Me", "url": "#/contact"}
+  ]
+}
