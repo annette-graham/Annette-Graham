@@ -1,0 +1,47 @@
+//Reset
+@import "./reset.scss";
+
+//Main
+@import "./variables.scss";
+
+// Viewport and breakpoints
+@import "./_breakpoints.scss";
+
+// Components
+@import "../components/About/_styles.scss";
+@import "../components/Header/_styles.scss";
+
+
+html {
+  font-size: 16px;
+  background-size: 400%;
+  scroll-behavior: smooth;
+  animation: bg-animation 20s infinite alternate;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+    background: linear-gradient(122.29deg,
+      #fee6d9 0%,
+      #fddad1 33.96%,
+      #f2cbcc 55.9%,
+      #dac1c6 78.89%,
+      #b1afb5 100%,
+    );
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
