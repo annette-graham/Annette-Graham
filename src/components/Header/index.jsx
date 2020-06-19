@@ -3,6 +3,7 @@ import React from 'react'
 
 import data from '../../data.json'
 import sloth from '../../images/yoga-sloth.png'
+import burger from '../../images/burger.svg'
 
 
 let links = data.links.map(link => {
@@ -17,41 +18,48 @@ let links = data.links.map(link => {
   )
 })
 
-const clickHandler = () => {
-  let x = document.getElementsByClassName("anchorLinks")
-  x.className === "anchorLinks" ? x.className += "--responsive" : x.className = "anchorLinks"
-  console.log(x.className)
+
+class Header extends React.Component {
+  state = {
+    hamburgerOpen: false
+  }
+
+  toggleMenu = () => {
+    this.setState( prevState => ({
+      hamburgerOpen: !prevState.hamburgerOpen
+    }))
+  }
+
+  render() {
+    const { hamburgerOpen } = this.state
+    console.log('yo', hamburgerOpen)
+
+    return (
+      <header className={`root sticky`}>
+        <img src={burger} className={`hamburger ${hamburgerOpen ? "active" : ""}`} onClick={this.toggleMenu}/>
+        <a className='logoLink'href="/">
+         <img alt="Sloth doing tree pose" src={sloth} className='logoImage'/>
+       </a>
+        <div className={`anchorLinks ${hamburgerOpen ? "active" : ""}`}>
+          {
+            data.links.map(link => {
+              return (
+                <a
+                  href={link.url}
+                  key={link.name}
+                  id={link.name}
+                  className={`anchorLinks--items ${hamburgerOpen ? "active" : ""}`}>
+                  {link.name}
+                </a>
+              )
+            })
+          }
+        </div>
+      </header>
+    )
+  }
 }
 
-const Header = ({ className }) => {
-
-  return (
-    <header className={`root sticky`}>
-      <a className='logoLink'href="/">
-       <img alt="Sloth doing tree pose" src={sloth} className='logoImage'/>
-     </a>
-      <div className='anchorLinks'>
-        {links}
-        <span className="anchorLinks--items--hamburger" onClick={clickHandler}>
-          <svg viewBox="0 0 100 80" width="40" height="40">
-            <rect width="100" height="20" rx="8"></rect>
-            <rect y="30" width="100" height="20" rx="8"></rect>
-            <rect y="60" width="100" height="20" rx="8"></rect>
-          </svg>
-        </span>
-      </div>
-    </header>
-  )
-}
-
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 
 export default Header
