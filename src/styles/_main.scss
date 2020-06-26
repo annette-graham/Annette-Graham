@@ -19,6 +19,15 @@ html {
   animation: bg-animation 20s infinite alternate;
 }
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 main {
   text-align: center;
 }
@@ -64,7 +73,7 @@ h3 {
 
 p {
   color: $primary-light;
-  padding: 16px;
+  padding: 10px;
   font-size: $small;
 }
 
