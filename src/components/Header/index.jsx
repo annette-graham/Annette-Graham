@@ -32,7 +32,6 @@ class Header extends React.Component {
 
   render() {
     const { hamburgerOpen } = this.state
-    console.log('yo', hamburgerOpen)
 
     return (
       <header className={`root sticky`}>
