@@ -8,7 +8,10 @@ const About = () => {
       <div className='body-content target'>
         <div className="header-image">        
           <h2 className="heading">ABOUT ME HOLY MOLY</h2>
-          <img alt="me" src='https://picsum.photos/id/237/250/250' className='me-image' />
+          <div className="lol">Hover
+            {/* <img alt="me" src='https://picsum.photos/id/237/250/250' className='me-image' /> */}
+            <span className="tooltip">sup dawg</span>
+          </div>
         </div>
         {/* <div className="about-container"> */}
           <div>
