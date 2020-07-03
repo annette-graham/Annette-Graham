@@ -1,0 +1,67 @@
+.contact-form {
+  display: flex;
+  padding: 40px;
+  background: linear-gradient(159.23deg,
+    rgba(255, 180, 162, 0.3) -1.38%, 
+    rgba(255, 216, 194, 0.3) -1.37%,
+    rgba(255, 180, 162, 0.3) 39.28%,
+    rgba(229, 152, 155, 0.3) 64.62%, 
+    rgba(181, 131, 141, 0.3) 84.69%, 
+    rgba(100, 95, 107, 0.3) 100%);
+  border-radius: 30px;
+
+  @include md {
+    margin: 0 25rem 0 25rem;
+  }
+}
+
+.input-group {
+	flex-direction: column;
+	padding-top: 30px;
+	min-width: 350px;
+}
+
+.form-input {
+	font-size: 16px;
+	margin-top: 10px;
+	max-width: 280px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	// box-shadow: inset 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+textarea {
+	overflow: auto;
+	outline: none;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	min-height: 50px;
+	min-width: 280px;
+	// box-shadow: inset 2px 2px rgba(158, 158, 158, 0.4);
+}
+
+.form-image {
+	padding-top: 30px;
+	padding-left: 8rem;
+	max-width: 230px;
+	align-self: flex-end;
+}
+
+.standard {
+	margin-bottom: 40px;
+}
+
+.submit {
+	width: 100px;
+	color: #645f6b;
+	font-weight: bolder;
+
+	&:hover {
+		border-color: transparent;
+		background-color: #e6e6e6;
+		transition: 0.95s cubic-bezier(0.23, 1, 0.32, 1) 50ms;
+		-webkit-transition: 0.95s cubic-bezier(0.23, 1, 0.32, 1) 50ms;
+	}
+}

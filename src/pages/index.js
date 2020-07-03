@@ -2,9 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Header from '../components/Header/index.jsx'
-import Home from '../components/Home'
-import About from '../components/About'
+import Header from './Header/index.jsx'
+import Home from './Home'
+import About from './About'
+import Projects from './Projects'
+import Tech from './Tech'
+import Contact from './Contact'
+
 import SEO from "../components/seo"
 
 const IndexPage = () => (
@@ -19,7 +23,9 @@ const IndexPage = () => (
       </div> */}
     </div>
     <About />
-    
+    <Projects />
+    <Tech />
+    <Contact />
   </Layout>
 )
 
