@@ -1,16 +1,29 @@
-//Reset
+// Tailwind
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Reset
 @import "./reset.scss";
 
-//Main
+// Main
 @import "./variables.scss";
 
 // Viewport and breakpoints
 @import "./_breakpoints.scss";
 
+// Pages
+@import "../pages/Header/_styles.scss";
+@import "../pages/Home/_styles.scss";
+@import "../pages/About/_styles.scss";
+@import "../pages/Projects/_styles.scss";
+@import "../pages/Tech/_styles.scss";
+@import "../pages/Contact/_styles.scss";
+
 // Components
-@import "../components/Home/_styles.scss";
-@import "../components/About/_styles.scss";
-@import "../components/Header/_styles.scss";
+@import "../components/Form/_styles.scss";
+@import "../components/Input/_styles.scss";
+@import "../components/SocialMedia/_styles.scss";
 
 
 html {
@@ -101,6 +114,7 @@ p {
 
 .body-content {
   padding-top: 80px;
+  margin-bottom: 75px;
   // padding-bottom: 10px;
 
   // @include sm {
