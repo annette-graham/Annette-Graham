@@ -1,0 +1,123 @@
+.sticky {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 64px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+// .sticky {
+//   margin-bottom: 400px;
+// }
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  color: $primary-light;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoImage {
+  opacity: 0.75;
+  width: 58px;
+  height: auto;
+  margin-left: 10px;
+}
+
+.anchorLinks {
+  display: none;
+  
+  @include sm {
+    float: right;
+    cursor: pointer;
+    display: block;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    color:red;
+  }
+
+  &--items {
+
+    @include sm {
+      margin-left: 0.5rem;
+      text-decoration: none;
+      display: inline-block;
+      color:$primary-light;
+      transition: letter-spacing 350ms ease;
+      
+      &:hover, &:active {
+        letter-spacing: 5px;
+        transition: letter-spacing 350ms ease;
+      }
+      &::after, &::before {
+        backface-visibility: hidden;
+        border: 1px solid rgba($secondary-light, 0);
+        content: "";
+        display: block;
+        margin: 4px auto;
+        position: relative;
+        transition: all 800ms ease;
+        width: 0;
+      } 
+      &::after {
+        bottom: 0;
+      }
+      &::before {
+        top: 0;
+      }
+      &:hover {
+        &::after, &::before {
+          border-color: $secondary-light;
+          transition: width 350ms ease;
+          width: 60%;
+        }
+      }
+    }
+  }
+}
+
+.hamburger {
+  float: right;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 15px;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include sm {
+    display: none;
+  }
+}
+
+.active {
+  display: block;
+
+  &.anchorLinks {
+    width: 90%;
+    position: relative;
+    margin-top: 280px;
+    
+    &--items {
+      background-color: $primary;
+      padding: 15px;
+      color: $primary-light;
+
+      &:nth-child(odd) {
+        background-color: $secondary-light;
+      }
+    }
+  }
+}
