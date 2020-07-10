@@ -1,8 +1,22 @@
-.media-image {
-	padding: 80px;
+.social-links {
+	padding-top: 50px;
+}
+	
+	.media-image {
+		display: block;
+		padding: 20px;
+		width: 91px;
+		height: 94px;
+		margin: auto;
+
+		@include sm {
+			display: inline-block;
+			// width: 51px;
+			// height: 54px;
+		}
 
 	&:hover {
-			background: #645F6B;
-			opacity: 0.95;
-	}
-}
+			// background: #645F6B;
+			opacity: 0.75;
+	}		
+}	
