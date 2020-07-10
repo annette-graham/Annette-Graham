@@ -14,7 +14,7 @@ const Home = () => {
         </h1>
         <p>Welcome to my website that I built for myself.</p>
         <br/>
-        <a href='#/about' className='anchorLink'>Down Arrow</a>
+        <a href='#/about' className='down-arrow'>Down Arrow</a>
       </div>
     </section>
   )
