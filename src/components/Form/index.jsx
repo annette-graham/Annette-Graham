@@ -1,12 +1,13 @@
 import React from 'react'
 import sloth from '../../images/reading-sloth2.png'
+import send from '../../images/send.svg'
 
 import Input from '../Input'
 
 const Form = () => {
 
   return (
-    
+
     <div className='contact-form'>
       <form 
         name="contact"
@@ -53,7 +54,7 @@ const Form = () => {
           type='submit'
           className="submit field form-input"
         >
-          Send
+          <img src={send} className="send"/>
         </button>
       </form>
       <img alt="Sloth reading a piece of paper" src={sloth} className='form-image' />

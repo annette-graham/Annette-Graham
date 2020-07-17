@@ -60,7 +60,7 @@
       }
       &::after, &::before {
         backface-visibility: hidden;
-        border: 1px solid rgba($secondary-light, 0);
+        border: 1px solid rgba($secondary, 0);
         content: "";
         display: block;
         margin: 4px auto;
@@ -76,7 +76,7 @@
       }
       &:hover {
         &::after, &::before {
-          border-color: $secondary-light;
+          border-color: $secondary;
           transition: width 350ms ease;
           width: 60%;
         }
@@ -116,7 +116,7 @@
       color: $primary-light;
 
       &:nth-child(odd) {
-        background-color: $secondary-light;
+        background-color: $secondary;
       }
     }
   }
