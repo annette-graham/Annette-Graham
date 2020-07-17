@@ -25,12 +25,10 @@ class Form extends React.Component {
     return (
       <div className='contact-form'>
         <form 
-          name="contact" 
-          method="POST" 
+          name="contact"
           action="/thanks"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          // onSubmit={e => this.handleSubmit(e)}
         >
          <input type="hidden" name="form-name" value="contact" />
           <div className="input-hidden">
@@ -44,7 +42,6 @@ class Form extends React.Component {
             label="Name"
             name="Name"
             placeholder="What's yo name fool?"
-            // onChange={e => this.handleChange(e)}
           />
           <Input
             className="standard form-input"
@@ -53,7 +50,6 @@ class Form extends React.Component {
             placeholder="just ur email plz"
             tag="input"
             type='email'
-            // onChange={e => this.handleChange(e)}
           />
           <Input
             className="form-input"
@@ -69,7 +65,6 @@ class Form extends React.Component {
             tag="input"
             type='submit'
             className="submit field form-input"
-            // onChange={e => this.handleSubmit(e)}
           >
             Send
           </button>
