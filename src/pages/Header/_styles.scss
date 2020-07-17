@@ -92,6 +92,7 @@
   right: 0;
   top: 0;
   padding: 15px;
+	filter: invert(39%) sepia(6%) saturate(735%) hue-rotate(223deg) brightness(92%) contrast(86%);
 
   &:hover {
     cursor: pointer;
