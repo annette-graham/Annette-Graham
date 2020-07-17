@@ -1,18 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import sloth from '../../images/reading-sloth2.png'
 import send from '../../images/send.svg'
+import tick from '../../images/tick.svg'
 
 import Input from '../Input'
 
 const Form = () => {
+  
+  const [ isSending, setSending ] = useState(false)
+  
+  const sending = () => setSending(!isSending)
 
   return (
-
     <div className='contact-form'>
       <form 
         name="contact"
         method="POST"
-        action="/thanks"
+        // action="/thanks"
         data-netlify="true"
         netlify-honeypot="bot-field"
       >
@@ -53,11 +57,21 @@ const Form = () => {
           tag="input"
           type='submit'
           className="submit field form-input"
+          onClick={sending}
         >
-          <img src={send} className="send"/>
+          <img
+            alt="sending icon"
+            className={`send ${isSending ? "animation animation2" : ""}`}
+            id="plane" 
+            src={`${isSending ? tick : send}`} 
+            />
         </button>
       </form>
-      <img alt="Sloth reading a piece of paper" src={sloth} className='form-image' />
+      <img 
+        alt="Sloth reading a piece of paper" 
+        className='form-image' 
+        src={sloth}
+      />
     </div>
   )
 }
