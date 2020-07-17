@@ -2,6 +2,7 @@ import React from 'react'
 
 const Input = ({
 		className,
+		id,
     label, 
     name,
     onChange,
@@ -18,6 +19,7 @@ const Input = ({
 				<label className='form-label'>{label}</label>
 				<Tag
 					className={className}
+					id={id}
 					type={type}
 					name={name} 
 					placeholder={placeholder}

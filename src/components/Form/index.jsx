@@ -26,6 +26,7 @@ class Form extends React.Component {
       <div className='contact-form'>
         <form 
           name="contact"
+          method="POST"
           action="/thanks"
           data-netlify="true"
           netlify-honeypot="bot-field"
@@ -41,12 +42,14 @@ class Form extends React.Component {
             tag="input"
             label="Name"
             name="Name"
+            id="name"
             placeholder="What's yo name fool?"
           />
           <Input
             className="standard form-input"
             label="Email"
-            name="Email"
+            name="email"
+            id="email"
             placeholder="just ur email plz"
             tag="input"
             type='email'
@@ -54,7 +57,8 @@ class Form extends React.Component {
           <Input
             className="form-input"
             label="Message"
-            name="Message"
+            name="message"
+            id="message"
             placeholder="What you gotta say then?"
             tag="textarea"
             type='textarea'
