@@ -16,7 +16,7 @@ const Input = ({
     return (
 			<div className='field'>
 				<label className='form-label'>{label}</label>
-				<Tag 
+				<Tag
 					className={className}
 					type={type}
 					name={name} 

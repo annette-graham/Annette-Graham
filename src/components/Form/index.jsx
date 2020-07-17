@@ -27,16 +27,53 @@ class Form extends React.Component {
         <form 
           name="contact" 
           method="POST" 
+          action="/thanks"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          onSubmit={e => this.handleSubmit(e)}
+          // onSubmit={e => this.handleSubmit(e)}
         >
          <input type="hidden" name="form-name" value="contact" />
           <div className="input-hidden">
             <label htmlFor="bot-field">You're a bot ain't ya</label>
             <input name="bot-field" id="bot-field" />
           </div>
-          <div className='field'>
+
+          <Input
+            className="standard form-input"
+            tag="input"
+            label="Name"
+            name="Name"
+            placeholder="What's yo name fool?"
+            // onChange={e => this.handleChange(e)}
+          />
+          <Input
+            className="standard form-input"
+            label="Email"
+            name="Email"
+            placeholder="just ur email plz"
+            tag="input"
+            type='email'
+            // onChange={e => this.handleChange(e)}
+          />
+          <Input
+            className="form-input"
+            label="Message"
+            name="Message"
+            placeholder="What you gotta say then?"
+            tag="textarea"
+            type='textarea'
+            onChange={e => this.handleChange(e)}
+          />
+          <button
+            name="Send"
+            tag="input"
+            type='submit'
+            className="submit field form-input"
+            // onChange={e => this.handleSubmit(e)}
+          >
+            Send
+          </button>
+          {/* <div className='field'>
             <label className='form-label'>Name</label>
             <input 
               className="standard form-input" 
@@ -60,7 +97,7 @@ class Form extends React.Component {
               name="Message" 
               onChange={e => this.handleChange(e)} 
               placeholder="What you gotta say?"
-              type="text" 
+              type="textarea" 
             />
           </div>
           <div className='field'>
@@ -70,7 +107,7 @@ class Form extends React.Component {
               name="send" 
               type="submit" 
             />
-        </div>
+        </div> */}
       </form>
       <img alt="Sloth reading a piece of paper" src={sloth} className='form-image' />
     </div>
