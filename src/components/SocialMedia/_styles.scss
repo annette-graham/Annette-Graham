@@ -8,6 +8,7 @@
 		width: 91px;
 		height: 94px;
 		margin: auto;
+		transition-duration: .6s;
 
 		@include sm {
 			display: inline-block;
@@ -18,5 +19,6 @@
 	&:hover {
 			// background: #645F6B;
 			opacity: 0.75;
+			transform: scale(0.9);
 	}		
 }	

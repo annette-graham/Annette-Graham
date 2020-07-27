@@ -40,7 +40,6 @@
 	padding: 10px;
 	border: none;
 	border-radius: 5px;
-	// box-shadow: inset 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 textarea {
@@ -52,7 +51,6 @@ textarea {
 	border: none;
 	height: 100px;
 	width: 300px;
-	// box-shadow: inset 2px 2px rgba(158, 158, 158, 0.4);
 }
 
 .form-image {
@@ -79,78 +77,89 @@ textarea {
 	margin-bottom: 40px;
 }
 
-.submit {
-	width: 150px;
-	padding: 10px 0 10px 55px;
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+
+.btn {
+  position: relative;
+	display: inline-block;
 	margin-top: 25px;
-	background-color: $secondary-light;
-	text-align: center;
-	font-weight: bolder;
-	// transition: 0.95s cubic-bezier(0.23, 1, 0.32, 1) 50ms;
-	// -webkit-transition: 0.95s cubic-bezier(0.23, 1, 0.32, 1) 50ms;
-	-webkit-transition: all 0.3s;
-	-moz-transition: all 0.3s;
-	transition: all 0.3s;
-
-	// &:hover {
-	// 	border-color: transparent;
-	// 	background-color: #e6e0e0e8;
-	// }
-	&:after {
-		-webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-	}
-}
-
-.send {
-	filter: invert(39%) sepia(6%) saturate(735%) hue-rotate(223deg) brightness(92%) contrast(86%);
-}
-
-
-.animation {
-	-webkit-transform: translate(100px, -100px);
-	-moz-transform: translate(100px, -100px);
-	-o-transform: translate(100px, -100px);
-	-ms-transform: translate(100px, -100px);
-	transform: translate(100px, -100px);
-	-webkit-transition: all 0.3s linear;
-	-moz-transition: all 0.3s linear;
-	-o-transition: all 0.3s linear;
-	transition: all 0.3s linear;
-}
-
-.animation2 {
-	-webkit-animation: fadeIn 0.4s ease-out;
-	-webkit-animation-iteration-count: 1;
-	-webkit-animation-fill-mode: forwards;
-	-webkit-animation-delay: 0.4s;
-	-moz-animation: fadeIn 0.4s ease-out;
-	-moz-animation-iteration-count: 1;
-	-moz-animation-fill-mode: forwards;
-	-moz-animation-delay: 0.4s;
-	animation: fadeIn 0.4s ease-out;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-	animation-delay: 0.4s;
-}
-
-@-webkit-keyframes fadeIn {
-	0% {
-			opacity: 0;
-	}
-
-	100% {
-			opacity: 1;
-	}
-}
-
-@keyframes fadeIn {
-	0% {
-			opacity: 0;
-	}
-
-	100% {
-			opacity: 1;
-	}
+	margin-right: 165px;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+  background: transparent;
+  font-size: inherit;
+	font-family: inherit;
+  &.submit {
+    width: 130px;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      display: block;
+      width: 3rem;
+      height: 3rem;
+      background: $primary-light;
+      border-radius: 1.625rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: white;
+        &.send {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute; 
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid white;
+            border-right: 0.125rem solid white;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $primary-light;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.send {
+        background: white;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: white;
+    }
+  }
 }
