@@ -42,6 +42,13 @@ module.exports = {
         icon: `src/images/hanging-sloth.png`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `qg10ei4njdi8`,
+        accessToken: `WacnVbR25OcBOdOAQ-nWOigwegKbgT50zv8dngMrg1Y`,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
