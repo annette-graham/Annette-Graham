@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import sloth from '../../images/reading-sloth2.png'
-import send from '../../images/send.svg'
-import tick from '../../images/tick.svg'
 
 import Input from '../Input'
 
@@ -17,7 +15,7 @@ const Form = () => {
         name="contact"
         method="POST"
         // action="/thanks"
-        data-netlify="true"
+        // data-netlify="true"
         netlify-honeypot="bot-field"
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -52,19 +50,11 @@ const Form = () => {
           tag="textarea"
           type='textarea'
         />
-        <button
-          name="Send"
-          tag="input"
-          type='submit'
-          className="submit field form-input"
-          onClick={sending}
-        >
-          <img
-            alt="sending icon"
-            className={`send ${isSending ? "animation animation2" : ""}`}
-            id="plane" 
-            src={`${isSending ? tick : send}`} 
-            />
+         <button className="btn submit">
+          <span className="circle" aria-hidden="true">
+            <span className="icon send"></span>
+          </span>
+          <span className="button-text">send</span>
         </button>
       </form>
       <img 
