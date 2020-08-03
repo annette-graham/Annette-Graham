@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Header from './Header/index.jsx'
+import Header from '../components/Header/index.jsx'
 import Home from './Home'
 import About from './About'
 import Projects from './Projects'

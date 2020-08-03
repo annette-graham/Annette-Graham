@@ -13,7 +13,6 @@
 @import "./_breakpoints.scss";
 
 // Pages
-@import "../pages/Header/_styles.scss";
 @import "../pages/Home/_styles.scss";
 @import "../pages/About/_styles.scss";
 @import "../pages/Projects/_styles.scss";
@@ -21,6 +20,7 @@
 @import "../pages/Contact/_styles.scss";
 
 // Components
+@import "../components/Header/_styles.scss";
 @import "../components/Form/_styles.scss";
 @import "../components/Input/_styles.scss";
 @import "../components/SocialMedia/_styles.scss";
