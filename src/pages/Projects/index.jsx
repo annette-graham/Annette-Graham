@@ -1,6 +1,8 @@
 import React from 'react'
-import sloth from '../../images/hanging-sloth.png'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from "gatsby"
+
+import sloth from '../../images/hanging-sloth.png'
 
 
 const Projects = ({ data }) => (
