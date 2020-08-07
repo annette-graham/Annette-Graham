@@ -91,6 +91,7 @@
   position: absolute;
   right: 0;
   top: 0;
+  z-index: 10;
   padding: 15px;
 	filter: invert(39%) sepia(6%) saturate(735%) hue-rotate(223deg) brightness(92%) contrast(86%);
 
@@ -107,18 +108,25 @@
   display: block;
 
   &.anchorLinks {
-    width: 90%;
-    position: relative;
-    margin-top: 280px;
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 55px;
+    right: 0;
+    z-index: 1;
     
     &--items {
       background-color: $primary;
-      padding: 15px;
+      padding: 25px;
       color: $primary-light;
-
-      &:nth-child(odd) {
-        background-color: $secondary;
-      }
+      opacity: 0.9;
+    //   &:nth-child(odd) {
+    //     background-color: $secondary;
+    //   }
     }
+  }
+  &.home-content {
+    filter: blur(18px);
+    -webkit-filter: blur(18px);
   }
 }
