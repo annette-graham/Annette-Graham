@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
+import { StaticQuery, graphql } from "gatsby"
 
 import data from '../../data.json'
 import sloth from '../../images/yoga-sloth.png'
@@ -28,13 +29,14 @@ const Header = () => {
        </a>
         <div className={`anchorLinks ${isHamburgerOpen ? "active" : ""}`}>
           { data.links.map(link => {
+            const { url, name} = link
             return (
               <a
-                href={link.url}
-                key={link.name}
-                id={link.name}
+                href={url}
+                key={name}
+                id={name}
                 className={`anchorLinks--items ${isHamburgerOpen ? "active" : ""}`}>
-                {link.name}
+                {name}
               </a>
             )
           })}
@@ -43,6 +45,24 @@ const Header = () => {
     )
 }
 
-
-
 export default Header
+
+// export default  () => (
+//   <StaticQuery
+//     query={graphql`
+//       query MyQuery {
+//         allContentfulNavLink{
+//           edges {
+//             node {
+//               name
+//               url
+//             }
+//           }
+//         }
+//       }
+//     `}
+//     render={data => (
+//       <Header data={data.allContentfulNavLink} />
+//     )}
+//   />
+// )
