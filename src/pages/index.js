@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Header from '../components/Header/index.jsx'
@@ -19,8 +18,6 @@ const IndexPage = () => (
       <div className='home'>
         <Home />
       </div>
-      {/* <div className="main-content">
-      </div> */}
     </div>
     <About />
     <Projects />
