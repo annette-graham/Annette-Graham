@@ -2,12 +2,11 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { StaticQuery, graphql } from "gatsby"
 
-import data from '../../data.json'
 import sloth from '../../images/yoga-sloth.png'
 import burger from '../../images/burger.svg'
 
 
-const Header = () => {
+const Header = ({ data }) => {
 
   const [ isHamburgerOpen, setHamburgerOpen ] = useState(false)
 
@@ -15,28 +14,29 @@ const Header = () => {
 
     return (
       <header className={`root sticky`}>
-        <img 
-          className={`hamburger ${isHamburgerOpen ? "active" : ""}`} 
+        <img
+          className={`hamburger ${isHamburgerOpen ? "active" : ""}`}
           onClick={toggleHamburger}
-          src={burger} 
+          src={burger}
         />
         <a className='logoLink'href="/">
-         <img 
-          alt="Sloth doing tree pose" 
+         <img
+          alt="Sloth doing tree pose"
           className='logoImage'
-          src={sloth} 
+          src={sloth}
         />
        </a>
         <div className={`anchorLinks ${isHamburgerOpen ? "active" : ""}`}>
-          { data.links.map(link => {
-            const { url, name} = link
+          { data.edges.map((edge, i) => {
+            const { name, order, urls } = edge.node
+            //TODO: list by order ascending
             return (
               <a
-                href={url}
-                key={name}
+                href={urls}
+                key={i}
                 id={name}
                 className={`anchorLinks--items ${isHamburgerOpen ? "active" : ""}`}>
-                {name}
+                 {name}
               </a>
             )
           })}
@@ -45,24 +45,24 @@ const Header = () => {
     )
 }
 
-export default Header
 
-// export default  () => (
-//   <StaticQuery
-//     query={graphql`
-//       query MyQuery {
-//         allContentfulNavLink{
-//           edges {
-//             node {
-//               name
-//               url
-//             }
-//           }
-//         }
-//       }
-//     `}
-//     render={data => (
-//       <Header data={data.allContentfulNavLink} />
-//     )}
-//   />
-// )
+export default  () => (
+  <StaticQuery
+    query={graphql`
+      query MyQuery2 {
+        allContentfulNavLinks{
+          edges {
+            node {
+              name
+              urls
+              order
+            }
+          }
+        }
+      }
+    `}
+    render={data => (
+      <Header data={data.allContentfulNavLinks} />
+    )}
+  />
+)
