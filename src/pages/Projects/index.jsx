@@ -20,7 +20,7 @@ const Projects = ({ data }) => (
       {data.edges.map((edge, i) => {
         return ( 
         <>
-          <h1>{edge.node.title}</h1>
+          <h1 key={i}>{edge.node.title}</h1>
           <p>{edge.node.paragraph.paragraph}</p>
         </>
         )
