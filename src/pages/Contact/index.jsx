@@ -7,7 +7,8 @@ import Form from '../../components/Form'
 
 const Contact = () => (
 
-  <section id="/contact" className='body'>
+  <>
+    <a id="contact" className='body'></a>
     <div className='body-content'>
       <img alt="Sloth reading a piece of paper" src={sloth} className='reading-image' />
       <h2 id="/contact" className="heading">Contact me bitch</h2>
@@ -19,7 +20,7 @@ const Contact = () => (
         <p>© 2020 Annette Graham</p>
       </div>
     </div>
-  </section>
+  </>
 )
 
 export default Contact

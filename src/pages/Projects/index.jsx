@@ -7,7 +7,8 @@ import sloth from '../../images/hanging-sloth.png'
 
 const Projects = ({ data }) => (
   
-  <section id="/projects" className='body'>
+  <>
+    <a id="projects" className='body'></a>
     <div className='body-content'>
       <img alt="Sloth hanging from a branch" src={sloth} className='hanging-image' />
       <h2 className="heading">I GOT SWEET F-A PROJECTS</h2>
@@ -26,7 +27,7 @@ const Projects = ({ data }) => (
         )
       })}
     </div>
-  </section>
+  </>
 )
 
 

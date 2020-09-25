@@ -6,7 +6,8 @@ const Tech = () => {
 
   return (
 
-    <section id="/tech" className='body'>
+    <>
+      <a id="tech" className='body'></a>
       <div className='body-content'>
         <img alt="Sloth doing tree pose" src={sloth} className='branch-image' />
         <h2 className="heading">HERE IS THE TECH I USE</h2>
@@ -57,7 +58,7 @@ const Tech = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   )
 }
 

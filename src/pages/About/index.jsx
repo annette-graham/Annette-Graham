@@ -4,7 +4,8 @@ import sloth from '../../images/happy-sloth.jpg'
 
 const About = () => {
   return (
-    <section id="/about" className='body target'>
+    <>
+      <a id="about" className='body'></a>
       <div className='body-content target'>
         <div className="header-image">        
           <h2 className="heading">ABOUT ME HOLY MOLY</h2>
@@ -30,7 +31,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </section>
+    </>
   )
 }
 

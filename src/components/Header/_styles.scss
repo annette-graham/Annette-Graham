@@ -107,26 +107,32 @@
 .active {
   display: block;
 
+  &.hamburger {
+    filter: invert(11%) sepia(4%) saturate(4064%) hue-rotate(182deg) brightness(88%) contrast(81%);
+  }
+
   &.anchorLinks {
-    height: 100%;
-    width: 250px;
+    width: 400px;
     position: fixed;
-    top: 55px;
+    top: 0px;
     right: 0;
     z-index: 1;
+    padding: 55px 25px 55px 25px;
+    background-color: $primary-light;
+    opacity: 0.8;
+    backdrop-filter: blur(40px);
     
     &--items {
-      background-color: $primary;
       padding: 25px;
-      color: $primary-light;
-      opacity: 0.9;
-    //   &:nth-child(odd) {
-    //     background-color: $secondary;
-    //   }
+      color: $primary;
+      transition: letter-spacing 350ms ease;
+
+      &:hover, &:active {
+        background-color: $primary;
+        color: $primary-light;
+        letter-spacing: 5px;
+        transition: letter-spacing 350ms ease;
+      }
     }
-  }
-  &.home-content {
-    filter: blur(18px);
-    -webkit-filter: blur(18px);
   }
 }

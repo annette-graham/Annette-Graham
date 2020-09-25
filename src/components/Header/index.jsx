@@ -9,7 +9,6 @@ import burger from '../../images/burger.svg'
 const Header = ({ data }) => {
 
   const [ isHamburgerOpen, setHamburgerOpen ] = useState(false)
-
   const toggleHamburger = () => setHamburgerOpen(!isHamburgerOpen)
 
     return (
@@ -29,14 +28,15 @@ const Header = ({ data }) => {
         <div className={`anchorLinks ${isHamburgerOpen ? "active" : ""}`}>
           { data.edges.map((edge, i) => {
             const { name, order, urls } = edge.node
+            const prettyName = isHamburgerOpen ? name.replace('|', '') : name
             //TODO: list by order ascending
             return (
               <a
-                href={urls}
+                href={`#${urls}`}
                 key={i}
                 id={name}
                 className={`anchorLinks--items ${isHamburgerOpen ? "active" : ""}`}>
-                 {name}
+                 {prettyName}
               </a>
             )
           })}

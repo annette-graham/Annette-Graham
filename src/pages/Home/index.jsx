@@ -6,7 +6,8 @@ const Home = () => {
   const arr = ['I AM ANNETTE AND I AM A SOFTWARE ENGINEER OKAY.', <br/>, 'GOSH']
 
   return (
-    <section id="top" className="body home-body">
+    <>
+      <a id="top" className='body home-body'></a>
       <div className='home-content'>
         <img alt="Sloth doing tree pose" src={sloth} className='home-sloth' />
         <h1 className="heading">
@@ -14,9 +15,9 @@ const Home = () => {
         </h1>
         <p>Welcome to my website that I built for myself.</p>
         <br/>
-        <a href='#/about' className='down-arrow'>Down Arrow</a>
+        <a href='#about' className='down-arrow'>Down Arrow</a>
       </div>
-    </section>
+    </>
   )
 }
 
