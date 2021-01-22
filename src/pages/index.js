@@ -1,4 +1,5 @@
 import React from "react"
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Layout from "../components/layout"
 import Header from '../components/Header/index.jsx'
@@ -13,16 +14,16 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Header />
-    <div className="main-body">
-      <div className='home'>
-        <Home />
-      </div>
-    </div>
-    <About />
-    <Projects />
-    <Tech />
-    <Contact />
+    <BrowserRouter>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route exact path ='/about' component={About} />
+        <Route exact path ='/projects' component={Projects} />
+        <Route exact path ='/tech' component={Tech} />
+        <Route exact path ='/contact' component={Contact} />
+      </Switch>
+    </BrowserRouter>
   </Layout>
 )
 

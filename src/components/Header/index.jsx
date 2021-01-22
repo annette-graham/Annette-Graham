@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom'
+
 import React, { useState } from 'react'
 import { StaticQuery, graphql } from "gatsby"
 
@@ -31,13 +33,13 @@ const Header = ({ data }) => {
             const prettyName = isHamburgerOpen ? name.replace('|', '') : name
             //TODO: list by order ascending
             return (
-              <a
-                href={`#${urls}`}
+              <NavLink
+                exact to={`/${urls}`}
                 key={i}
-                id={name}
+                activeClassName=''
                 className={`anchorLinks--items ${isHamburgerOpen ? "active" : ""}`}>
                  {prettyName}
-              </a>
+              </NavLink>
             )
           })}
         </div>
