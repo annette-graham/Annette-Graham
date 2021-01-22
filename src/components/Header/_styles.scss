@@ -14,10 +14,6 @@
   z-index: 10;
 }
 
-// .sticky {
-//   margin-bottom: 400px;
-// }
-
 .logoLink {
   display: flex;
   align-items: center;
@@ -46,7 +42,6 @@
   }
 
   &--items {
-
     @include sm {
       margin-left: 0.5rem;
       text-decoration: none;
