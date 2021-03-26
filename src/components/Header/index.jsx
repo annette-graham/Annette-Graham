@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { StaticQuery, graphql } from "gatsby"
 
 import sloth from '../../images/yoga-sloth.png'
@@ -10,6 +10,10 @@ const Header = ({ data }) => {
 
   const [ isHamburgerOpen, setHamburgerOpen ] = useState(false)
   const toggleHamburger = () => setHamburgerOpen(!isHamburgerOpen)
+
+  // useEffect(() => {
+  //   return
+  // }, [data])
 
     return (
       <header className={`root sticky`}>

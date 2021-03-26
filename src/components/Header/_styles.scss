@@ -42,7 +42,6 @@
     display: block;
     margin-block-start: 0.3em;
     margin-block-end: 0.3em;
-    color:red;
   }
 
   &--items {
@@ -108,7 +107,7 @@
   display: block;
 
   &.hamburger {
-    filter: invert(11%) sepia(4%) saturate(4064%) hue-rotate(182deg) brightness(88%) contrast(81%);
+    filter: invert(75%) sepia(4%) saturate(256%) hue-rotate(219deg) brightness(94%) contrast(90%);
   }
 
   &.anchorLinks {
@@ -117,18 +116,18 @@
     top: 0px;
     right: 0;
     z-index: 1;
-    padding: 55px 25px 55px 25px;
+    padding: 75px 25px 55px 25px;
     background-color: $primary-light;
     opacity: 0.8;
     backdrop-filter: blur(40px);
     
     &--items {
       padding: 25px;
-      color: $primary;
+      color: $secondary;
       transition: letter-spacing 350ms ease;
 
       &:hover, &:active {
-        background-color: $primary;
+        background-color: $secondary;
         color: $primary-light;
         letter-spacing: 5px;
         transition: letter-spacing 350ms ease;
