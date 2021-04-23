@@ -11,6 +11,13 @@ const Header = ({ data }) => {
   const [ isHamburgerOpen, setHamburgerOpen ] = useState(false)
   const toggleHamburger = () => setHamburgerOpen(!isHamburgerOpen)
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0, 
+      left: 0, 
+      behavior: 'smooth'
+    })
+  }
   // useEffect(() => {
   //   return
   // }, [data])
@@ -22,13 +29,13 @@ const Header = ({ data }) => {
           onClick={toggleHamburger}
           src={burger}
         />
-        <a className='logoLink'href="/">
+        <button className='logoLink' onClick={scrollToTop}>
          <img
           alt="Sloth doing tree pose"
           className='logoImage'
           src={sloth}
         />
-       </a>
+       </button>
         <div className={`anchorLinks ${isHamburgerOpen ? "active" : ""}`}>
           { data.edges.map((edge, i) => {
             const { name, order, urls } = edge.node
